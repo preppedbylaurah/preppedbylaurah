@@ -1,16 +1,554 @@
-## Hi there 👋
 
-<!--
-**preppedbylaurah/preppedbylaurah** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal chef and meal prep services in Peoria and the Greater Phoenix Area. Fresh, homemade meals prepared right in your kitchen by Laurah.">
+    <title>preppedbylaurah</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: #f8fbff;
+            color: #333;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 10%;
+            box-shadow: 0 3px 10px rgba(0,0,0,.08);
+            z-index: 1000;
+        }
+        
+        nav h2 {
+            color: #3b82f6;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            transition: .3s;
+        }
+        
+        nav a:hover {
+            color: #ec4899;
+        }
 
-Here are some ideas to get you started:
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #3b82f6;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #60a5fa, #f472b6);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        
+        .hero h2 {
+            font-weight: 400;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+        
+        .btn, .insta-btn {
+            display: inline-block;
+            padding: 16px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: .3s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn {
+            background: #fff;
+            color: #ec4899;
+        }
+        
+        .btn:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+        
+        section {
+            padding: 90px 10%;
+            scroll-margin-top: 90px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            color: #3b82f6;
+            margin-bottom: 60px;
+        }
+        
+        .about {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.1);
+        }
+        
+        .about-text h3 {
+            color: #ec4899;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+        
+        .about-text p {
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        
+        .cards, .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .number {
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #60a5fa, #f472b6);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #60a5fa, #f472b6);
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            padding: 60px;
+        }
+        
+        .instagram, .gallery, .agreement-section {
+            text-align: center;
+        }
+        
+        .instagram p, .gallery p, .agreement-section > p {
+            margin: 20px auto;
+            max-width: 700px;
+            font-size: 18px;
+        }
+        
+        .insta-btn {
+            background: #ec4899;
+            color: #fff;
+        }
+        
+        .insta-btn:hover {
+            background: #3b82f6;
+        }
+        
+        .gallery-grid img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.1);
+            transition: .3s;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+        /* Agreement Box Styles */
+        .agreement-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: left;
+            max-width: 850px;
+            margin: 30px auto 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
+            display: none;
+        }
+
+        .agreement-box.active {
+            display: block;
+        }
+
+        .agreement-box h3 {
+            color: #3b82f6;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 20px;
+            border-bottom: 2px solid #f8fbff;
+            padding-bottom: 5px;
+        }
+
+        .agreement-box h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .agreement-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .agreement-box li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .agreement-box strong {
+            color: #ec4899;
+        }
+        
+        footer {
+            background: #1e3a8a;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 15px;
+        }
+
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .footer-links a:hover {
+            color: #f472b6;
+            text-decoration: underline;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #93c5fd;
+            font-weight: normal;
+        }
+        
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            .hero h2 {
+                font-size: 22px;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .agreement-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <h2>preppedbylaurah</h2>
+        <div class="hamburger" id="hamburger">☰</div>
+        <ul id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">How It Works</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#agreement">Agreement</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>preppedbylaurah</h1>
+            <h2>Fresh, Homemade Meals Prepared Right in Your Kitchen</h2>
+            <p>Serving Peoria and the Greater Phoenix Area. Save time, eat healthier, and enjoy personalized meals without the stress of cooking. I come to your home and prepare fresh meals that are ready for you to enjoy all week long.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">You Pick the Meals. I Make Them.</h2>
+        <div class="about">
+            <img src="https://i.postimg.cc/pX1Kvc3s/IMG-1053.avif" alt="Laurah freshly prepping meals" loading="lazy">
+            <div class="about-text">
+                <h3>Homemade Meals Without the Work</h3>
+                <p>Whether you're a busy professional, a family on the go, or simply love fresh homemade food, I'll take care of everything.</p>
+                <br>
+                <p>
+                    ✔ Personalized Meal Plans<br>
+                    ✔ Fresh Homemade Meals<br>
+                    ✔ Weekly Meal Prep<br>
+                    ✔ Baking Available
+                </p>
+                <br>
+                <a class="insta-btn" href="https://preppedbylaurah.substack.com/p/how-i-became-a-private-chef-at-18" target="_blank" rel="noopener noreferrer">Read My Story</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="number">1</div>
+                <h3>Schedule</h3>
+                <p>Initial consultation and setup.</p>
+            </div>
+            <div class="card">
+                <div class="number">2</div>
+                <h3>Choose Meals</h3>
+                <p>Pick your weekly menu.</p>
+            </div>
+            <div class="card">
+                <div class="number">3</div>
+                <h3>I Cook</h3>
+                <p>I prepare everything right in your kitchen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Featured Meals</h2>
+        <p>Here are a few examples of the delicious homemade meals and treats I prepare right in your kitchen.</p>
+        <div class="gallery-grid">
+            <img src="https://i.postimg.cc/Bbbtw4Sd/IMG-1193.avif" alt="Freshly prepared meal option 1" loading="lazy">
+            <img src="https://i.postimg.cc/Qd8N6jfw/IMG-1465.avif" alt="Freshly prepared meal option 2" loading="lazy">
+            <img src="https://i.postimg.cc/Cxr0mkBD/IMG-1535.avif" alt="Freshly prepared meal option 3" loading="lazy">
+        </div>
+        <br><br>
+        <a class="insta-btn" href="https://www.instagram.com/preppedbylaurah/" target="_blank" rel="noopener noreferrer">See More on Instagram</a>
+    </section>
+
+    <section>
+        <div class="cta">
+            <h2>You Pick the Meals.<br>I Make Them.</h2>
+            <p>Fresh • Homemade • Personalized</p>
+        </div>
+    </section>
+
+    <section id="agreement" class="agreement-section">
+        <h2 class="section-title">Weekly Meal Prep Agreement</h2>
+        <p>Welcome! Below is a simple outline of our weekly workflow, fees, and expectations so everything runs seamlessly.</p>
+        <button id="toggle-agreement" class="insta-btn">View Agreement Terms</button>
+
+        <div id="agreement-box" class="agreement-box">
+            <h3>1. Rates & Payment</h3>
+            <ul>
+                <li><strong>Hourly Rate:</strong> $40 per hour for all on-site prep, cooking, packaging, and kitchen cleanup (typically 3 to 5 hours per cook day).</li>
+                <li><strong>Travel & Mileage:</strong> Mileage is billed at standard IRS rates for travel to and from your home.</li>
+                <li><strong>Payment Methods:</strong> I accept Zelle, Venmo, Cash, or Check.</li>
+                <li><strong>Payment Terms:</strong> Upon completion, I will provide you with the amount due. Payment is due upon receipt.</li>
+            </ul>
+
+            <h3>2. Weekly Schedule & Process</h3>
+            <ul>
+                <li><strong>Weekend Menu Prep:</strong> I will send your proposed menu every Saturday or Sunday morning.</li>
+                <li><strong>Menu Deadline:</strong> Please review and send your menu approvals or adjustments by Sunday night at 11:59 PM.</li>
+                <li><strong>Grocery List:</strong> I will provide you with a full, detailed grocery list at least 48 hours prior to your scheduled cook day.</li>
+                <li><strong>Client Food Purchase:</strong> You are responsible for purchasing all grocery items on the list prior to my arrival.</li>
+            </ul>
+
+            <h3>3. Cook Day Expectations</h3>
+            <ul>
+                <li><strong>Scheduled Service:</strong> Cook day is scheduled weekly starting on your agreed date.</li>
+                <li><strong>Time in Kitchen:</strong> I will be in your kitchen for approximately 3 to 5 hours on cook day.</li>
+                <li><strong>Kitchen Access:</strong> Please ensure kitchen counters are clear, the sink is empty, and adequate fridge space is available for your prepped meals.</li>
+                <li><strong>Spotless Cleanup:</strong> I respect your home! I will wash all pots, pans, and tools used during prep, wipe down all kitchen surfaces, and leave your kitchen completely spotless.</li>
+            </ul>
+
+            <h3>4. Photos & Video Content</h3>
+            <ul>
+                <li>I love sharing behind-the-scenes glimpses of meal prep on social media to grow my business.</li>
+                <li><strong>Your Privacy:</strong> I will <em>never</em> reveal your name, address, family members, or house layout. Permission options are reviewed directly with each client during onboarding.</li>
+            </ul>
+
+            <h3>5. Cancellations & Rescheduling</h3>
+            <ul>
+                <li><strong>Notice Required:</strong> Because cook day slots are reserved weekly, please provide at least 48 hours notice if you need to skip or reschedule a week.</li>
+                <li><strong>Late Cancellations:</strong> Cancellations made with less than 48 hours notice will be charged 50% of the estimated service fee for that day.</li>
+            </ul>
+
+            <h3>6. Dietary & Health Safety</h3>
+            <ul>
+                <li>Please notify me of all food allergies, intolerances, and dietary preferences prior to menu finalization.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="instagram" class="instagram">
+        <h2 class="section-title">Follow My Journey</h2>
+        <p>See my latest meal preps on Instagram.</p>
+        <a class="insta-btn" href="https://www.instagram.com/preppedbylaurah/" target="_blank" rel="noopener noreferrer">@preppedbylaurah</a>
+    </section>
+
+    <footer>
+        <h3>preppedbylaurah</h3>
+        <div class="footer-links">
+            <span>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgi1K1s5-We0vSNG-yuuT_kBSHbKw8TMmHUg86FSges3lUfQ/viewform" target="_blank" rel="noopener noreferrer">View Menu</a> 
+                <span class="note">(Client Submission Only)</span>
+            </span>
+            | 
+            <a href="https://substack.com/@preppedbylaurah" target="_blank" rel="noopener noreferrer">Substack</a>
+        </div>
+        <p>© 2026 preppedbylaurah</p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('#nav-links li a');
+        
+        const toggleBtn = document.getElementById('toggle-agreement');
+        const agreementBox = document.getElementById('agreement-box');
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scroll via JavaScript to prevent online HTML previewers from reloading
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href');
+                
+                // Only intercept internal section anchors (starting with #)
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+                
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close mobile nav when clicking anywhere outside
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        toggleBtn.addEventListener('click', () => {
+            agreementBox.classList.toggle('active');
+            if(agreementBox.classList.contains('active')) {
+                toggleBtn.innerText = 'Hide Agreement Terms';
+            } else {
+                toggleBtn.innerText = 'View Agreement Terms';
+            }
+        });
+    </script>
+</body>
+</html>
